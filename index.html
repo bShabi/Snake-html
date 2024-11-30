@@ -4,24 +4,34 @@
     <title>Snake Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
+
         body {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
             touch-action: none;
-            overflow: hidden;
         }
         
         .game-container {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
             width: 100%;
-            max-width: 500px;
+            height: 100%;
             padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
         
         canvas {
@@ -30,16 +40,17 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             max-width: 100%;
             height: auto;
+            margin-bottom: 10px;
         }
         
         .score {
             font-size: 24px;
-            margin: 20px 0;
+            margin: 10px 0;
             color: #333;
         }
         
         .controls {
-            margin: 20px 0;
+            margin: 10px 0;
             color: #666;
         }
 
@@ -47,20 +58,32 @@
             display: none;
             width: 240px;
             height: 240px;
-            margin: 20px auto;
+            margin: 10px auto;
             position: relative;
+            flex-shrink: 0;
         }
 
         @media (max-width: 768px) {
+            .game-container {
+                justify-content: space-between;
+                padding-bottom: 80px; /* Extra padding to avoid browser UI */
+            }
+
             .mobile-controls {
                 display: block;
+                margin-top: auto;
             }
 
             .controls {
                 display: none;
             }
+
+            canvas {
+                max-height: 50vh; /* Limit canvas height on mobile */
+            }
         }
 
+        /* Control buttons styles remain the same */
         .control-btn {
             position: absolute;
             width: 70px;
@@ -107,7 +130,6 @@
             border-radius: 5px 15px 15px 5px;
         }
 
-        /* Custom styling for button arrows */
         .control-btn::after {
             content: '';
             width: 20px;
@@ -148,6 +170,7 @@
     </div>
 
     <script>
+        // JavaScript remains the same as in your original code
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         const scoreElement = document.getElementById('score');
@@ -238,7 +261,6 @@
             gameOver = false;
         }
         
-        // Touch controls
         document.querySelectorAll('.control-btn').forEach(button => {
             ['touchstart', 'click'].forEach(eventType => {
                 button.addEventListener(eventType, (e) => {
@@ -266,7 +288,6 @@
             });
         });
 
-        // Keyboard controls
         document.addEventListener('keydown', (event) => {
             if (gameOver && event.code === 'Space') {
                 resetGame();
