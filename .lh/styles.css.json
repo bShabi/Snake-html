@@ -1,0 +1,18 @@
+{
+    "sourceFile": "styles.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1732987723462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1732987723461,
+            "name": "Commit-0",
+            "content": "html, body {\n    height: 100%;\n    margin: 0;\n    padding: 0;\n    overflow: hidden;\n    position: fixed;\n    width: 100%;\n}\n\nbody {\n    display: flex;\n    flex-direction: column;\n    background-color: #f0f0f0;\n    font-family: Arial, sans-serif;\n    touch-action: none;\n}\n\n.game-container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n    width: 100%;\n    height: 100%;\n    padding: 10px;\n    box-sizing: border-box;\n    overflow-y: auto;\n    -webkit-overflow-scrolling: touch;\n}\n\ncanvas {\n    border: 2px solid #333;\n    background-color: #fff;\n    box-shadow: 0 0 10px rgba(0,0,0,0.1);\n    max-width: 100%;\n    height: auto;\n    margin-bottom: 10px;\n}\n\n.score {\n    font-size: 24px;\n    margin: 10px 0;\n    color: #333;\n}\n\n.controls {\n    margin: 10px 0;\n    color: #666;\n}\n\n.mobile-controls {\n    display: none;\n    width: 240px;\n    height: 240px;\n    margin: 10px auto;\n    position: relative;\n    flex-shrink: 0;\n}\n\n@media (max-width: 768px) {\n    .game-container {\n        justify-content: space-between;\n        padding-bottom: 80px; /* Extra padding to avoid browser UI */\n    }\n\n    .mobile-controls {\n        display: block;\n        margin-top: auto;\n    }\n\n    .controls {\n        display: none;\n    }\n\n    canvas {\n        max-height: 50vh; /* Limit canvas height on mobile */\n    }\n}\n\n/* Control buttons styles remain the same */\n.control-btn {\n    position: absolute;\n    width: 70px;\n    height: 70px;\n    border: none;\n    border-radius: 15px;\n    background: #2196F3;\n    color: white;\n    font-size: 28px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    touch-action: manipulation;\n    user-select: none;\n    -webkit-tap-highlight-color: transparent;\n    box-shadow: 0 4px 8px rgba(0,0,0,0.2);\n    transition: transform 0.1s, box-shadow 0.1s;\n}\n\n.control-btn:active {\n    transform: translateY(2px);\n    box-shadow: 0 2px 4px rgba(0,0,0,0.2);\n    background: #1976D2;\n}\n\n.up { \n    top: 0;\n    left: 85px;\n    border-radius: 15px 15px 5px 5px;\n}\n.down { \n    bottom: 0;\n    left: 85px;\n    border-radius: 5px 5px 15px 15px;\n}\n.left { \n    left: 0;\n    top: 85px;\n    border-radius: 15px 5px 5px 15px;\n}\n.right { \n    right: 0;\n    top: 85px;\n    border-radius: 5px 15px 15px 5px;\n}\n\n.control-btn::after {\n    content: '';\n    width: 20px;\n    height: 20px;\n    border: 4px solid white;\n    border-width: 4px 4px 0 0;\n    display: inline-block;\n}\n\n.up::after {\n    transform: rotate(-45deg) translateY(5px);\n}\n\n.down::after {\n    transform: rotate(135deg) translateY(-5px);\n}\n\n.left::after {\n    transform: rotate(-135deg) translateX(5px);\n}\n\n.right::after {\n    transform: rotate(45deg) translateX(-5px);\n}\n"
+        }
+    ]
+}

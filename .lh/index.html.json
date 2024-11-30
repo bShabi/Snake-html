@@ -1,0 +1,18 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1732987739602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1732987739602,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Snake Game</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n    <link href=\"styles.css\" rel=\"stylesheet\">\n    <script src=\"main.js\" defer></script>\n\n</head>\n<body>\n    <div class=\"game-container\">\n        <div class=\"score\">Score: <span id=\"score\">0</span></div>\n        <canvas id=\"gameCanvas\" width=\"400\" height=\"400\"></canvas>\n        <div class=\"controls\">Use arrow keys to move the snake</div>\n        <div class=\"mobile-controls\">\n            <button class=\"control-btn up\"></button>\n            <button class=\"control-btn left\"></button>\n            <button class=\"control-btn right\"></button>\n            <button class=\"control-btn down\"></button>\n        </div>\n    </div>\n\n\n</body>\n</html>"
+        }
+    ]
+}
